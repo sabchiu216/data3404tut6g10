@@ -51,11 +51,11 @@ We used a Python list to maintain the access order of frames.
 - Most recently used → end of list
 - Least recently used → beginning of list
 
-### notify(pool, frame)
+### notify()
 - Called when a frame is accessed
 - Moves the frame to the end of the list
 
-### choose(pool)
+### choose()
 - Iterates through frames in order
 - Selects the first frame that is not pinned
 - Throws exception if all frames are pinned
