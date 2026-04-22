@@ -3,8 +3,6 @@
 ## Goal
 The goal of this assignment is to implement an LRU (Least Recently Used) buffer replacement policy to replace the existing RandomReplacer in SimpleDB.
 
----
-
 ## Existing System
 SimpleDB uses a BufferManager that manages a pool of buffer frames.
 
@@ -29,7 +27,6 @@ The LRU policy:
 - moves recently accessed frames to the end
 - selects the least recently used unpinned frame for eviction
 
----
 
 ## Relevant Files and Changes
 
@@ -40,9 +37,6 @@ The LRU policy:
 - `simpledb/main/database_manager.py`
   - replaced `RandomReplacer` with `LRUReplacer`
 
-- (optional if you changed it)
-- `simpledb/buffer/buffer_manager.py`
-  - ensured replacer is notified on access/unpin
 
 ### Test files:
 - `tests/test_buffer/test_lru_replacer.py`
@@ -75,7 +69,7 @@ We used a Python list to maintain the access order of frames.
 - Reused existing `Replacer` interface to avoid modifying core system logic
 - Relied on BufferManager to handle dirty pages and flushing
 
----
+
 
 ## Integration with Existing System
 
